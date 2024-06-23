@@ -1,9 +1,15 @@
-{% extends 'header.html' %} {% block content %} {% if request.user.is_authenticated %}
-<h2 class="text-center">Bienvenido {{ user.username | upper }}!</h2>
-{% else %}
-<h2 class="text-center">Bienvenido!</h2>
-{% endif %}
-<p class="text-center">
-    Mirá las imágenes desde <a href="{% url 'home' %}">este link.</a>
-</p>
+{% extends 'header.html' %} {% block content %} 
+<div class="container-fluid">
+    <div class="content-container">
+    {% if request.user.is_authenticated %}
+    <h2 class="text-center titulo"><strong>¡Bienvenido/a {{ user.username | upper }}!</strong></h2>
+    {% else %}
+    <h2 class="text-center titulo"><strong>¡Bienvenido/a!</strong></h2>
+    {% endif %}
+    <p class="text-center custom-text2">
+        Mirá las imágenes desde 
+        <a href="{% url 'home' %}" class="btn btn-outline-light custom-btn btn-sm"> AQUÍ</a> <!--convierte el link en un botón y luego custom-btn es llamado en css para personalizarlo -->
+    </p>
+    </div>
+</div>
 {% endblock %}

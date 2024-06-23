@@ -40,7 +40,7 @@ body {
 }
 
 .search-box input:focus {
-    border-color: #3FBAE4;
+    border-color: #373838;
 }
 
 .search-box i {
@@ -140,3 +140,71 @@ table.table td i {
     margin-top: 6px;
     font-size: 95%;
 }
+
+/*ACÁ COMIENZA LA EDICIÓN DE LAS ALUMNAS*/
+
+.background-image { /*LLAMO AL BACKGROUND QUE PUSE EN HEADER.HTML*/
+    background-image: url('{% static "static/imagen/fondo.jpg" %}');
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    top: 0;
+    left: 0;
+    z-index: -1; /*orden de posición -1 para que esté detrás del contenido*/
+   
+}
+
+.color-overlay { /*LE COLOCO UN OVERLAY PARA HACER LA IMAGEN MÁS OSCURA*/
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2); 
+    z-index: -1; /*orden de posición -1 para que esté detrás del contenido*/
+}
+
+.content-container { /*MODIFICA TODO EL CONTAINER DE INDEX.HTML*/
+    position: relative;
+    z-index: 1; /*orden de posición 1 para que esté sobre la imagen*/
+}
+
+.titulo { /*MODIFICA EL BIENVENIDO/A DEL INDEX*/
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    position: relative;
+    top: 150px;
+    font-size: 5rem;
+    color: white;
+}
+
+.custom-text2 { /*MODIFICA EL TEXTO DEL INDEX*/
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    position: relative;
+    top: 155px;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.btn:hover { /*MODIFICA EL BOTÓN (:HOVER PARA QUE CAMBIE CUANDO LE PONEN EL CURSOR ENCIMA)*/
+    background-color: #312e2e; /*color del botón al pasar el cursor por encima*/
+    color: white;
+    position: relative;
+    z-index: 1; /*orden de posición 1 para que esté sobre el contenido*/   
+}
+
+.bg-body-tertiary { /*MODIFICA EL TEXTO DEL FOOTER*/
+    font-size: 1rem;
+    color: rgb(158, 155, 155);
+}
+
+.tituloHome {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
