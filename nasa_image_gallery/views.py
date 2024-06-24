@@ -38,8 +38,6 @@ def search(request):
         return render (request, 'home.html', {'images': busqueda } )
 
     # si el usuario no ingresó texto alguno, debe refrescar la página; caso contrario, debe filtrar aquellas imágenes que posean el texto de búsqueda.
-    
-
 
 # las siguientes funciones se utilizan para implementar la sección de favoritos: traer los favoritos de un usuario, guardarlos, eliminarlos y desloguearse de la app.
 @login_required
@@ -60,4 +58,4 @@ def deleteFavourite(request):
 
 @login_required
 def exit(request):
-    pass
+    return home(request)
