@@ -9,15 +9,6 @@
     <form action="{% url 'login' %}" method="POST" style="display: inline-block;">
         {% csrf_token %}
         <h2 class="inicioSesion text-center">Inicio de sesión</h2>
-
-        {%if messages%} <!--si django detecta un mensaje-->
-            <div>
-
-                {% for message in messages %} <!--itero sobre los mensajes que encuentre-->
-                    <div class="alert alert-danger" role="alert">{{message}}</div> <!--muestra mensaje como una alerta-->
-                {%endfor%}
-            </div>
-            {%endif%}
         <div class="form-group" style="margin-bottom: 5%;">
             <input type="text" name="username" id="username" class="form-control" placeholder="Usuario" required="required">
         </div>
