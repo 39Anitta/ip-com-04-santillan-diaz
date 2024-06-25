@@ -208,3 +208,9 @@ table.table td i {
     font-style: normal;
 }
 
+.inicioSesion {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}

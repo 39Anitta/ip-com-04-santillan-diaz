@@ -18,11 +18,27 @@
             background-position: center;
             z-index: -1;
         }
+        
+/* agrego clase login-page para poder modificar el fondo solo de esa página */
+
+        body.login-page { 
+            background-size:cover; /* Cambia el tamaño del fondo solo para login.html */
+            z-index: -1;
+        }
+
+        body.favourites-page { 
+            background-size:cover; /* Cambia el tamaño del fondo solo para favourites.html */
+            z-index: -1;
+        }
+
+
     </style>
 
 </head>
 
-<body>
+
+<body class="{% block fondo_login %}{% endblock %}"> <!-- este bloque puede ser sobreescrito por cualquier template q extienda header.html-->
+
     <div 
         class="background-image" 
         style="background-image: url('static/imagen/fondo.jpg');" 
@@ -65,3 +81,5 @@
         </nav>
 
         {% block content %} {% endblock %} {% include "footer.html" %}
+
+</body>

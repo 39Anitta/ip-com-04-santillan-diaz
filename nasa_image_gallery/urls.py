@@ -8,7 +8,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),   
     path('', views.index_page, name='index-page'),
     path('login/', auth_views.LoginView.as_view(), name='login'), #Cuando el usuario es redireccionado a login, es autentificado
-    path('home/', views.home, name='home'),
+    path('home/', views.home, name='home'),                                         
     path('buscar/', views.search, name='buscar'),
 
     path('favourites/', views.getAllFavouritesByUser, name='favoritos'),

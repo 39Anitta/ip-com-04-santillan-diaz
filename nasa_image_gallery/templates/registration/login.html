@@ -1,8 +1,23 @@
-{% extends 'header.html' %} {% block content %}
-<div class="login-form" style="text-align: center;">
+{% extends 'header.html' %} 
+
+{% block fondo_login %}login-page{% endblock %} <!--para personalizar el fondo de esta página utilizo el bloque-->
+
+{% block content %}
+
+
+<div class="login-form mt-5" style="text-align: center;">
     <form action="{% url 'login' %}" method="POST" style="display: inline-block;">
         {% csrf_token %}
-        <h2 class="text-center">Inicio de sesión</h2>
+        <h2 class="inicioSesion text-center">Inicio de sesión</h2>
+
+        {%if messages%} <!--si django detecta un mensaje-->
+            <div>
+
+                {% for message in messages %} <!--itero sobre los mensajes que encuentre-->
+                    <div class="alert alert-danger" role="alert">{{message}}</div> <!--muestra mensaje como una alerta-->
+                {%endfor%}
+            </div>
+            {%endif%}
         <div class="form-group" style="margin-bottom: 5%;">
             <input type="text" name="username" id="username" class="form-control" placeholder="Usuario" required="required">
         </div>
@@ -10,7 +25,7 @@
             <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+            <button type="submit" class="btn btn-outline-light btn-block">Ingresar</button>
         </div>
     </form>
 </div>

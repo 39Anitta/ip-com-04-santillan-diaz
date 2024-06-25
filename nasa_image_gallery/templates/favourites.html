@@ -1,4 +1,10 @@
-{% extends 'header.html' %} {% block content %}
+{% extends 'header.html' %} 
+
+{% block fondo_login %}favourites-page{% endblock %} <!--para personalizar el fondo de esta página utilizo 
+el bloque. Uso el mismo que para el login, pero le cambio la clase css a favourites-page-->
+
+
+{% block content %}
 <div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">
