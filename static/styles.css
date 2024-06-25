@@ -189,12 +189,6 @@ table.table td i {
     color: white;
 }
 
-.btn:hover { /*MODIFICA EL BOTÓN (:HOVER PARA QUE CAMBIE CUANDO LE PONEN EL CURSOR ENCIMA)*/
-    background-color: #312e2e; /*color del botón al pasar el cursor por encima*/
-    color: white;
-    position: relative;
-    z-index: 1; /*orden de posición 1 para que esté sobre el contenido*/   
-}
 
 .bg-body-tertiary { /*MODIFICA EL TEXTO DEL FOOTER*/
     font-size: 1rem;
